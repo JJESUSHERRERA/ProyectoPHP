@@ -17,7 +17,7 @@ INSERT INTO categoria (idC, nombre) VALUES	(8,'Cinto');
 INSERT INTO categoria (idC, nombre) VALUES	(9,'Bateria');
 INSERT INTO categoria (idC, nombre) VALUES	(10,'Zoom');
 
-CREATE TABLE productos (
+/*CREATE TABLE productos (
   idP         int         AUTO_INCREMENT ,
   marca       varchar(60) NOT NULL,
   descripcion varchar(60) NOT NULL,
@@ -27,7 +27,19 @@ CREATE TABLE productos (
   PRIMARY KEY (idP,categoria),
   FOREIGN KEY  (categoria),
   CONSTRAINT FK_categoria FOREIGN KEY (categoria) REFERENCES categoria (idC)
+);*/
+
+CREATE TABLE productos (
+  idP         int         AUTO_INCREMENT ,
+  marca       varchar(60) NOT NULL,
+  descripcion varchar(60) NOT NULL,
+  origen      varchar(60) NOT NULL,
+  precio      int         NOT NULL,
+  categoria   int         NOT NULL,
+  PRIMARY KEY (idP),
+  CONSTRAINT FK_categoria FOREIGN KEY (categoria) REFERENCES categoria (idC)
 );
+
 
 INSERT INTO productos (idP, marca, descripcion, origen, precio, categoria) VALUES
 	(1,'Xanxi','Flash de Camara','china',200,1);
